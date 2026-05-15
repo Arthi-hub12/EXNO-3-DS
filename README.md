@@ -42,14 +42,16 @@ import pandas as pd
 df=pd.read_csv("Encoding Data.csv")
 df
 ```
-![image](https://github.com/user-attachments/assets/01eaf6f6-d5c9-40ff-90a6-80dbc7027aaf)
+<img width="302" height="361" alt="Screenshot 2026-05-15 115018" src="https://github.com/user-attachments/assets/48da4590-e583-4ace-8856-de5b3bd237cd" />
+
 ```
 from sklearn.preprocessing import LabelEncoder,OrdinalEncoder
 pm=['Hot','Warm','Cold']
 e1=OrdinalEncoder(categories=[pm])
 e1.fit_transform(df[["ord_2"]])
 ```
-![image](https://github.com/user-attachments/assets/989525cf-5c92-43d3-bbda-c59dfb54c807)
+<img width="157" height="243" alt="Screenshot 2026-05-15 115033" src="https://github.com/user-attachments/assets/10af6c22-afa9-48e4-baff-3b76ffe69e31" />
+
 ```
 df['bo2']=e1.fit_transform(df[["ord_2"]])
 df
@@ -61,7 +63,8 @@ dfc=df.copy()
 dfc['ord_2']=le.fit_transform(dfc['ord_2'])
 dfc
 ```
-![image](https://github.com/user-attachments/assets/b1416f1a-e3c8-4f2d-bcfa-29e33058c47b)
+<img width="351" height="401" alt="Screenshot 2026-05-15 115048" src="https://github.com/user-attachments/assets/10002820-6827-4c66-a9b7-6a9676165943" />
+
 ```
 from sklearn.preprocessing import OneHotEncoder
 ohe=OneHotEncoder(sparse=False)
@@ -74,11 +77,13 @@ df2=pd.concat([df2,enc],axis=1)
 df2=pd.concat([df2,enc],axis=1)
 df2
 ```
-![image](https://github.com/user-attachments/assets/d771e710-d1d2-484f-806c-d8a28b413fb6)
+<img width="358" height="380" alt="Screenshot 2026-05-15 115101" src="https://github.com/user-attachments/assets/326561c5-6cb0-4903-ba55-6e49252d7eb2" />
+
 ```
 pd.get_dummies(df2,columns=["nom_0"])
 ```
-![image](https://github.com/user-attachments/assets/ec7c9eef-8aa6-42ae-a23b-fbb529cb4096)
+<img width="562" height="361" alt="Screenshot 2026-05-15 141728" src="https://github.com/user-attachments/assets/99449f05-2ddb-4f03-98ab-5f01a15fde43" />
+
 ```
 pip install --upgrade category_encoders
 ```
@@ -88,7 +93,8 @@ from category_encoders import BinaryEncoder
 df=pd.read_csv("data.csv")
 df
 ```
-![image](https://github.com/user-attachments/assets/6fc78ad0-b71e-457a-a1c4-8bfccc5dddb5)
+<img width="812" height="371" alt="Screenshot 2026-05-15 141741" src="https://github.com/user-attachments/assets/4eea8e6d-074c-416d-8ec7-ac72d0fc353d" />
+
 ```
 be=BinaryEncoder()
 nd=be.fit_transform(df['Ord_2'])
